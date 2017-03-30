@@ -5,8 +5,8 @@ angular.module("journeyApp").config(
     function ($routeProvider) {
         $routeProvider
         .when("/", {
-            templateUrl: "/templates/routing/login.html",
-            controller: 'loginController'
+            templateUrl: "/templates/routing/home.html",
+            controller: 'homeController'
         })
         .when("/journey", {
             templateUrl: "/templates/routing/journey.html",
@@ -27,7 +27,7 @@ angular.module("journeyApp").config(
         .otherwise({
             redirectTo: "/404"
         });
-    }).controller('loginController', function ($scope) {
+    }).controller('homeController', function ($scope) {
 
     }).controller('startController', function ($scope) {
         console.log(new Date());

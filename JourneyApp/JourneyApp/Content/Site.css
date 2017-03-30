@@ -38,3 +38,21 @@ textarea {
     display: block;
     margin: 0 auto;
 }
+
+.home-wrapper, .login-wrapper {
+    max-width: 600px;
+    /*text-align: center;*/
+    margin: 0 auto;
+}
+
+.home-wrapper .center-block {
+    margin-top: 30px;
+}
+
+.home-wrapper .center-block a {
+    margin: 0 10px;
+}
+
+footer p {
+    text-align: center;
+}

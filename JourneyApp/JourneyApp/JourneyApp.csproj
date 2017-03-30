@@ -1029,6 +1029,7 @@
     <Content Include="Scripts\respond.min.js" />
     <Content Include="Scripts\_references.js" />
     <Content Include="templates\routing\404.html" />
+    <Content Include="templates\routing\home.html" />
     <Content Include="templates\routing\journey.html" />
     <Content Include="templates\routing\login.html" />
     <Content Include="templates\routing\start.html" />
