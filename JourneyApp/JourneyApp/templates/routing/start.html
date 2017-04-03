@@ -7,8 +7,10 @@
     </select>
     <input type="date" name="date" id="journeyDate" class="form-control" value="{{currentDate}}" required="">
     <input type="number" name="tripStart" class="form-control" placeholder="Mätarställning start" required="">
-    <input type="text" name="startAdress" class="form-control" placeholder="Start adress" required="">
-    <input type="text" name="destinationAdress" id="destinationAdress" class="form-control" placeholder="Destination adress" required="">
+    <input type="text" name="startAdress" class="form-control" placeholder="Start adress" value="{{startPos}}" required="">
+    <span id="geoStart" class="getGeoLocation btn btn-default" ng-click="getStartPos()"><span class="glyphicon glyphicon-map-marker"></span></span>
+    <input type="text" name="destinationAdress" id="destinationAdress" class="form-control" placeholder="Destination adress" value="{{destPos}}" required="">
+    <span id="geoDestination" class="getGeoLocation btn btn-default" ng-click="getDestPos()"><span class="glyphicon glyphicon-map-marker"></span></span>
     <textarea name="errand" class="form-control" placeholder="Ärende" required></textarea>
     <textarea name="note" class="form-control" placeholder="Anteckningar"></textarea>
 

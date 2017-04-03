@@ -20,6 +20,15 @@ textarea {
     margin: 0 auto;
     max-width: 320px;
 }
+.form-new-journey {
+    position: relative;
+}
+
+.getGeoLocation {
+    position: relative;
+    left: 280px;
+    top: -39px;
+}
 
 .form-signin-heading {
     text-align: center;

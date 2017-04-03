@@ -31,7 +31,16 @@ angular.module("journeyApp").config(
 
     }).controller('startController', function ($scope) {
         console.log(new Date());
-        //$scope.currentDate = new Date();
+        $scope.currentDate = new Date();
+        
+        var promise = getLocation();
+        //Get location function
+        $scope.getStartPos = function(){
+            promise.then(function (data) { $scope.startPos(data); });
+        }
+        $scope.getDestPos = function () {
+            $scope.destPos = getLocation();
+        }
 
     }).controller('stopController', function ($scope) {
 
