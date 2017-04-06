@@ -1,0 +1,18 @@
+﻿<!--Lets user start a journey-->
+<form class="form-new-journey">
+    <h2>Påbörja en resa</h2>
+    <select class="form-control" name="vehicle" autofocus="">
+        <option value="xem225">xem225</option>
+        <option value="fke992">fke992</option>
+    </select>
+    <input type="date" name="date" id="journeyDate" class="form-control" value="{{currentDate}}" required="">
+    <input type="number" name="tripStart" class="form-control" placeholder="Mätarställning start" required="">
+    <input type="text" name="startAdress" class="form-control" placeholder="Start adress" value="{{startPos}}" required="">
+    <span id="geoStart" class="getGeoLocation btn btn-default" ng-click="getStartPos()"><span class="glyphicon glyphicon-map-marker"></span></span>
+    <input type="text" name="destinationAdress" id="destinationAdress" class="form-control" placeholder="Destination adress" value="{{destPos}}" required="">
+    <span id="geoDestination" class="getGeoLocation btn btn-default" ng-click="getDestPos()"><span class="glyphicon glyphicon-map-marker"></span></span>
+    <textarea name="errand" class="form-control" placeholder="Ärende" required></textarea>
+    <textarea name="note" class="form-control" placeholder="Anteckningar"></textarea>
+
+    <button class="btn btn-lg btn-primary btn-block" type="submit">Starta resa</button>
+</form>

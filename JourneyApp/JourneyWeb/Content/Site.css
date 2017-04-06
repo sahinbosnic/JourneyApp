@@ -1,24 +1,66 @@
 ﻿body {
-    padding-top: 50px;
+    padding-top: 80px;
     padding-bottom: 20px;
 }
 
-/* Set padding to keep content from hitting the edges */
-.body-content {
-    padding-left: 15px;
-    padding-right: 15px;
-}
-
-/* Override the default bootstrap behavior where horizontal description lists 
-   will truncate terms that are too long to fit in the left column 
-*/
-.dl-horizontal dt {
-    white-space: normal;
-}
-
-/* Set width on the form input elements since they're 100% wide by default */
 input,
 select,
 textarea {
-    max-width: 280px;
+    margin-bottom: 5px;
+}
+
+.wrapper {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.form-signin, .form-new-journey {
+    display: block;
+    margin: 0 auto;
+    max-width: 320px;
+}
+.form-new-journey {
+    position: relative;
+}
+
+.getGeoLocation {
+    position: relative;
+    left: 280px;
+    top: -39px;
+}
+
+.form-signin-heading {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.form-signin button {
+    margin-top: 20px;
+}
+
+.list-journeys {
+    margin-top: 15px;
+}
+
+.center-element {
+    display: block;
+    margin: 0 auto;
+}
+
+.home-wrapper, .login-wrapper {
+    max-width: 600px;
+    /*text-align: center;*/
+    margin: 0 auto;
+}
+
+.home-wrapper .center-block {
+    margin-top: 30px;
+}
+
+.home-wrapper .center-block a {
+    margin: 0 10px;
+}
+
+footer p {
+    text-align: center;
 }
