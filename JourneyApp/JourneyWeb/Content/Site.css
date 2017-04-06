@@ -5,62 +5,29 @@
 
 input,
 select,
-textarea {
-    margin-bottom: 5px;
-}
+textarea {margin-bottom: 5px;}
 
-.wrapper {
-    max-width: 800px;
-    margin: 0 auto;
-}
+.wrapper { max-width: 800px; margin: 0 auto;}
 
-.form-signin, .form-new-journey {
-    display: block;
-    margin: 0 auto;
-    max-width: 320px;
-}
-.form-new-journey {
-    position: relative;
-}
+.form-signin {display: block; margin: 0 auto; max-width: 400px;}
+.form-signin-heading { text-align: center; margin-bottom: 20px;}
+.form-signin button { margin-top: 20px;}
 
-.getGeoLocation {
-    position: relative;
-    left: 280px;
-    top: -39px;
-}
+.form-new-journey {display: block; margin: 0 auto; max-width: 400px;}
+.form-new-journey { position: relative;}
 
-.form-signin-heading {
-    text-align: center;
-    margin-bottom: 20px;
-}
+.getGeoLocation { position: relative; left: 360px; top: -39px;}
 
-.form-signin button {
-    margin-top: 20px;
-}
+.list-journeys {margin-top: 15px;}
 
-.list-journeys {
-    margin-top: 15px;
-}
+.center-element {display: block; margin: 0 auto;}
 
-.center-element {
-    display: block;
-    margin: 0 auto;
-}
+.home-wrapper, .login-wrapper {max-width: 600px; margin: 0 auto;}
+.home-wrapper .center-block {margin-top: 30px;}
+.home-wrapper .center-block a {margin: 0 10px;}
 
-.home-wrapper, .login-wrapper {
-    max-width: 600px;
-    /*text-align: center;*/
-    margin: 0 auto;
-}
-
-.home-wrapper .center-block {
-    margin-top: 30px;
-}
-
-.home-wrapper .center-block a {
-    margin: 0 10px;
-}
-
-footer p {
+.error-page {
     text-align: center;
 }
+
+footer p {text-align: center;}

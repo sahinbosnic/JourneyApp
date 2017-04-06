@@ -230,7 +230,7 @@
     <Content Include="Scripts\angular-route.min.js" />
     <Content Include="Scripts\angular.js" />
     <Content Include="Scripts\angular.min.js" />
-    <Content Include="Scripts\app.js" />
+    <Content Include="Scripts\journeyApp.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="ApplicationInsights.config">
@@ -240,6 +240,7 @@
     <Content Include="Scripts\angular-route.min.js.map" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\geolocation.js" />
+    <Content Include="Scripts\journeyStart.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
@@ -253,7 +254,6 @@
     <Content Include="Scripts\_references.js" />
     <Content Include="Templates\Routing\404.html" />
     <Content Include="Templates\Routing\home.html" />
-    <Content Include="Templates\Routing\journey.html" />
     <Content Include="Templates\Routing\login.html" />
     <Content Include="Templates\Routing\start.html" />
     <Content Include="Templates\Routing\stop.html" />
@@ -295,6 +295,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Content\Images\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

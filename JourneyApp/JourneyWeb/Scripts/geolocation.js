@@ -1,8 +1,9 @@
 ﻿//AIzaSyBZ6IHUZECmNx0KtMhynF1cwGAOdERa2h8
 
+//http://stackoverflow.com/questions/2993563/how-do-i-return-a-variable-from-google-maps-javascript-geocoder-callback
 //Get event
-function getLocation() {
-    var formattedAddress;
+function getLocation(callback) {
+    //var formattedAddress;
     if(navigator.geolocation)
     {
         navigator.geolocation.getCurrentPosition(showPosition, error);
@@ -25,8 +26,7 @@ function getLocation() {
         geocoder.geocode({ 'location': latlng }, function (results, status) {
             if (status === google.maps.GeocoderStatus.OK) {
                 if (results[0]) {
-                    formattedAddress = results[0].formatted_address;
-                    console.log(formattedAddress, "geolocation");
+                    callback(results[0].formatted_address);
                 } else {
                     console.log("No match, sorry!");
                 }
@@ -35,6 +35,5 @@ function getLocation() {
             }
         });
     }
-    return formattedAddress;
 
 }
