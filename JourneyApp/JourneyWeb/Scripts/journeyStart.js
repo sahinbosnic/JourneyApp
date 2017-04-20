@@ -1,21 +1,20 @@
 ﻿angular.module("journeyApp").controller('startController', function ($scope) {
-    console.log(new Date());
-    $scope.currentDate = new Date("mm/dd/yyyy");
+    //Get vehicle list for logged in user
+    getMyVehicles(function (myVehicles) {
+        $scope.myVehicleList = myVehicles;
+        console.log($scope.myVehicleList);
+    });
 
-    var promise = getLocation();
+    //console.log(new Date());
+    var today = new Date();
+    $scope.currentDate = new Date();
+    //console.log(today.getFullYear + '/' + (today.getMonth + 1) + '/' + today.getDate); 
 
-    $scope.getStartPos = function () {
-        getLocation(function (addr) {
-            console.log(addr, "(app.js)");
+    $scope.getStartPos = getLocation(function (addr) {
+            console.log(addr, "(journeyStart.js)");
             $scope.startPos = addr;
         });
-    }
 
-    /*$scope.getDestPos = function () {
-        getLocation(function (addr) {
-            console.log(addr, "(app.js)");
-            $scope.destPos = addr;
-        });
-    }*/
+
 
 })

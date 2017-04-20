@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Http;
 using System.Data.Entity;
 using JourneyWeb.Models;
+using Microsoft.AspNet.Identity;
 //using System.Web.Mvc;
 
 namespace JourneyWeb.Controllers
@@ -14,37 +15,18 @@ namespace JourneyWeb.Controllers
 
         private ApplicationDbContext db = new ApplicationDbContext();
 
-
-        /*List<Vehicle> _vehicles = new List<Vehicle>()
-        {
-            new Vehicle { Id = 1, User = null, NumberPlate = "xem225", Active = true, Odometer = 276544, Note = null },
-            new Vehicle { Id = 2, User = null, NumberPlate = "fke992", Active = true, Odometer = 276544, Note = null },
-            new Vehicle { Id = 3, User = null, NumberPlate = "ljf541", Active = true, Odometer = 276544, Note = null }
-        };
-
-        [HttpGet]
-        public IEnumerable<Vehicle> GetAllVehicles()
-        {
-            return _vehicles;
-        }*/
-        [HttpGet]
+        [Authorize]
         public IEnumerable<Vehicle> Get()
         {
-            //var getVehicleList = db.Vehicle.OrderByDescending(x => x.Active).ThenBy(x => x.NumberPlate).ToList();
-            var getVehicleList = db.Vehicle.Include(x => x.User).OrderByDescending(x => x.Active).ThenBy(x => x.NumberPlate).ToList();
-            //var getVehicleList = db.Vehicle.OrderBy(x => x.Active).ThenBy(x => x.NumberPlate);
+            var userId = User.Identity.GetUserId();
+            var getVehicleList = db.Vehicle.Where(x => x.User.Id == userId).OrderByDescending(x => x.Active).ThenBy(x => x.NumberPlate).ToList();
+
             return getVehicleList;
         }
 
-        //Return vehicles that belong to user
-        /*public Vehicle Get(string userId)
+        public IEnumerable<Vehicle> Get(string userId)
         {
-            return db.Vehicle.FirstOrDefault(x => x.User.Id == userId);
-        }*/
-        /*/ GET: Vehicle
-        public ActionResult Index()
-        {
-            return View();
-        }*/
+            return null;
+        }
     }
 }
