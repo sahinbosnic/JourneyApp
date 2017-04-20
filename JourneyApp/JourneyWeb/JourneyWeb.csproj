@@ -252,6 +252,7 @@
     <Content Include="Scripts\angular-route.min.js.map" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\geolocation.js" />
+    <Content Include="Scripts\journeyMain.js" />
     <Content Include="Scripts\journeyStart.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
