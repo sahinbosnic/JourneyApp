@@ -1,23 +1,21 @@
 ﻿<!--Lets user start a journey-->
-<form class="form-new-journey">
+<form class="form-new-journey" ng-submit="startTrip()">
     <h2>Påbörja en resa</h2>
-    <!--<select class="form-control" name="vehicle" autofocus="">
-        <option value="xem225">xem225</option>
-        <option value="fke992">fke992</option>
-    </select>-->
-    <select ng-model="myVehicleList" ng-options="NumberPlate as myVehicles.NumberPlate for NumberPlate in myVehicles"></select>
+    <select class="form-control" ng-model="tripVehicle" ng-options="item.NumberPlate as item.NumberPlate for item in myVehicles">
+        <option ng-option value="">Välj ett fordon</option>
+    </select>
 
-    <input type="date" name="date" id="journeyDate" class="form-control" value="{{currentDate}}" required="">
-    <input type="number" name="tripStart" class="form-control" placeholder="Mätarställning start" required="">
+    <input ng-model="tripStartDate" type="date" name="date" id="journeyDate" class="form-control" value="{{currentDate}}" required="">
+    <input ng-model="tripOdometer" type="number" name="tripStart" class="form-control" placeholder="Mätarställning start" required="">
     <div class="input-group start-adress-container">
-        <input type="text" name="startAdress" class="form-control" placeholder="Start adress" value="{{startPos}}" required="">
+        <input ng-model="tripStartPos" type="text" name="startAdress" class="form-control" placeholder="Start adress" value="{{startPos}}" required="">
         <span class="input-group-btn">
-            <button class="btn btn-default" ng-click="getStartPos()" type="button"><span class="glyphicon glyphicon-map-marker"></span></button>
+            <button class="btn btn-default" ng-click="setStartPos()" type="button"><span class="glyphicon glyphicon-map-marker"></span></button>
         </span>
     </div>
-    <input type="text" name="destinationAdress" id="destinationAdress" class="form-control" placeholder="Destination adress" value="{{destPos}}" required="">
-    <textarea name="errand" class="form-control" placeholder="Ärende" required></textarea>
-    <textarea name="note" class="form-control" placeholder="Anteckningar"></textarea>
+    <input ng-model="tripStopPos" type="text" name="destinationAdress" id="destinationAdress" class="form-control" placeholder="Destination adress" value="{{destPos}}" required="">
+    <textarea ng-model="tripErrand" name="errand" class="form-control" placeholder="Ärende" required></textarea>
+    <textarea ng-model="tripNote" name="note" class="form-control" placeholder="Anteckningar"></textarea>
 
     <button class="btn btn-lg btn-primary btn-block" type="submit">Starta resa</button>
 </form>

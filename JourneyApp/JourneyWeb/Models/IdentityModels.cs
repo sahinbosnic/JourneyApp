@@ -25,7 +25,7 @@ namespace JourneyWeb.Models
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
         public DbSet<Vehicle> Vehicle { get; set; }
-        public DbSet<Trip> Trips { get; set; }
+        public DbSet<Trip> Trip { get; set; }
 
         public ApplicationDbContext()
             : base("DefaultDataContext", throwIfV1Schema: false)

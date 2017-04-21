@@ -6,7 +6,6 @@ using System.Web.Http;
 using System.Data.Entity;
 using JourneyWeb.Models;
 using Microsoft.AspNet.Identity;
-//using System.Web.Mvc;
 
 namespace JourneyWeb.Controllers
 {
