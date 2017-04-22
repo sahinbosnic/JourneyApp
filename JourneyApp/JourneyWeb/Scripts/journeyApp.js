@@ -27,8 +27,6 @@ angular.module("journeyApp").config(
         .otherwise({
             redirectTo: "/404"
         });
-    }).controller('homeController', function ($scope) {
-
     }).controller('stopController', function ($scope) {
 
     });
