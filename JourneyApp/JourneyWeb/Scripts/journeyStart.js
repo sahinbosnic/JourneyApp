@@ -47,16 +47,10 @@
             "Active": true
         };
 
-        $.ajax({
-            type: 'post',
-            datatype: "json",
-            data: data,
-            url: "/api/Trip",
-            success: function (data) {
-                $scope.$apply(function () {
-                    $location.path("/home");
-                });
-            }
+        //$http.post('/someUrl', data, config).then(successCallback, errorCallback);
+        $http.post("/api/Trip", data, { headers: { 'Content-Type': 'application/json' } })
+        .then(function (data) {
+            $location.path("/home");
         });
     };
 
