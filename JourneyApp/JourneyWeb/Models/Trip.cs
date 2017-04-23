@@ -11,7 +11,7 @@ namespace JourneyWeb.Models
         public int Id { get; set; }
         [JsonIgnore]
         public virtual ApplicationUser User { get; set; }
-        [JsonIgnore]
+        //[JsonIgnore]
         public virtual Vehicle Vehicle { get; set; }
         public DateTime TripDate { get; set; }
         public int OdometerStart { get; set; }

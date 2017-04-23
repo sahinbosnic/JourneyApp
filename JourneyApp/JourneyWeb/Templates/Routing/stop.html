@@ -1,10 +1,15 @@
 ﻿<!--When user has arrived, click stop to finnish journey-->
-<form class="form-new-journey">
+<form class="form-new-journey" ng-submit="stopTrip()">
     <h2>Avsluta din resa</h2>
-    <h2><small>Fordon: XEM225</small></h2>
-    <input type="number" name="tripStop" class="form-control" placeholder="Mätarställning vid destination" required="">
-
-    <textarea name="note" class="form-control" placeholder="Anteckningar"></textarea>
+    <h2><small>Fordon: {{myTrip.Vehicle.NumberPlate}}</small></h2>
+    <input ng-model="tripStopOdometer" type="number" name="tripStop" class="form-control" placeholder="Mätarställning vid destination" required="">
+    <div class="input-group start-adress-container">
+        <input ng-model="myTrip.AddressStop" type="text" name="stopAdress" class="form-control" placeholder="Destination adress" required="">
+        <span class="input-group-btn">
+            <button class="btn btn-default" ng-click="setStartPos()" type="button"><span class="glyphicon glyphicon-map-marker"></span></button>
+        </span>
+    </div>
+    <textarea ng-model="myTrip.Note" name="note" class="form-control" placeholder="Anteckningar"></textarea>
 
     <button class="btn btn-lg btn-primary btn-block" type="submit">Avsluta resa</button>
 </form>

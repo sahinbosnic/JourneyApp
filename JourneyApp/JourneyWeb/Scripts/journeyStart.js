@@ -4,7 +4,7 @@
     $scope.tripVehicle = null;
     $scope.myVehicles = [];
     $http.get("/api/Vehicle").then(function (response) {
-        $scope.myVehicles = response.data
+        $scope.myVehicles = response.data;
     }, function (error) {
         //error
     });
@@ -16,7 +16,6 @@
     //Get current location 
     var location = "";
     getLocation(function (addr) {
-        console.log(addr, "(journeyStart.js)");
         location = addr;
     });
 
@@ -39,12 +38,13 @@
             "Id": 0,
             "TripDate": tripStartDate,
             "OdometerStart": tripOdometer,
-            "OdometerStop": 123457,
+            "OdometerStop": 0,
             "AddressStart": tripStartPos,
             "AddressStop": tripStopPos,
             "Errand": tripErrand,
             "Note": tripNote,
-            "Active": true
+            "Active": true,
+            //"Vehicle": {Id: 1}
         };
 
         //$http.post('/someUrl', data, config).then(successCallback, errorCallback);

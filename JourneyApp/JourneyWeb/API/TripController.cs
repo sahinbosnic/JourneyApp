@@ -35,6 +35,15 @@ namespace JourneyWeb.Controllers
 
         }
 
+        [Authorize]
+        public Trip Get(int id)
+        {
+            //var userId = User.Identity.GetUserId();
+            //var getVehicleList = db.Trip.Where(x => x.User.Id == userId).OrderByDescending(x => x.Active).ThenBy(x => x.NumberPlate).ToList();
+            return db.Trip.FirstOrDefault(x => x.Id == id);
+
+        }
+
         //[Authorize]
         public string Post(Trip trip)
         {

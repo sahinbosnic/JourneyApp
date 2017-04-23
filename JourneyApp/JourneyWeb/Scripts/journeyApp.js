@@ -20,6 +20,10 @@ angular.module("journeyApp").config(
             templateUrl: "/Templates/Routing/stop.html",
             controller: 'stopController'
         })
+        .when("/stop/:tripId", {
+            templateUrl: "/Templates/Routing/stop.html",
+            controller: 'stopController'
+        })
         .when("/404", {
             templateUrl: "/Templates/Routing/404.html",
             controller: '404'
@@ -27,6 +31,4 @@ angular.module("journeyApp").config(
         .otherwise({
             redirectTo: "/404"
         });
-    }).controller('stopController', function ($scope) {
-
     });
