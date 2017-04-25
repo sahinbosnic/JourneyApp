@@ -1,6 +1,11 @@
-﻿
-<a href="{{startUrl}}" class="btn btn-primary center-element">{{startMessage}}</a>
+﻿<div class="home-button-wrapper">
+    <a class="btn btn-default" href="#!/home">Hem</a>
+    <a class="btn btn-default" href="#!/vehicle">Mina fordon</a>
+    <a class="btn btn-default" href="#!/account">Mitt konto</a>
+    <a class="btn btn-default" href="#!/statistics">Statistik</a>
+</div>
 
+<a href="{{startUrl}}" class="btn btn-primary center-element">{{startMessage}}</a>
 <ul class="list-group list-journeys">
 
     <li ng-repeat="row in myTrips">

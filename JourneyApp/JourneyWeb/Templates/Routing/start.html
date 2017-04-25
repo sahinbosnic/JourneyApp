@@ -1,4 +1,10 @@
-﻿<!--Lets user start a journey-->
+﻿<div class="home-button-wrapper">
+    <a class="btn btn-default" href="#!/home">Hem</a>
+    <a class="btn btn-default" href="#!/vehicle">Mina fordon</a>
+    <a class="btn btn-default" href="#!/account">Mitt konto</a>
+    <a class="btn btn-default" href="#!/statistics">Statistik</a>
+</div>
+
 <form class="form-new-journey" ng-submit="startTrip()">
     <h2>Påbörja en resa</h2>
     <select class="form-control" ng-model="tripVehicle" ng-options="item.Id as item.NumberPlate for item in myVehicles">

@@ -1,4 +1,11 @@
-﻿<!--When user has arrived, click stop to finnish journey-->
+﻿<div class="home-button-wrapper">
+    <a class="btn btn-default" href="#!/home">Hem</a>
+    <a class="btn btn-default" href="#!/vehicle">Mina fordon</a>
+    <a class="btn btn-default" href="#!/account">Mitt konto</a>
+    <a class="btn btn-default" href="#!/statistics">Statistik</a>
+</div>
+
+<!--When user has arrived, click stop to finnish journey-->
 <form class="form-new-journey" ng-submit="stopTrip()">
     <h2>Avsluta din resa</h2>
     <h2><small>Fordon: {{myTrip.Vehicle.NumberPlate}}</small></h2>

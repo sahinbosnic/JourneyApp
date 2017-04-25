@@ -1,11 +1,7 @@
-﻿body {
-    padding-top: 80px;
-    padding-bottom: 20px;
-}
+﻿body { padding-top: 80px;padding-bottom: 20px; }
 
-input,
-select,
-textarea {margin-bottom: 5px;}
+input, select, textarea {margin-bottom: 5px;}
+ul {list-style: none;}
 
 .wrapper { max-width: 800px; margin: 0 auto;}
 
@@ -16,16 +12,24 @@ textarea {margin-bottom: 5px;}
 .form-new-journey { display: block; margin: 0 auto; max-width: 400px; position: relative;}
 .form-new-journey .start-adress-container { margin-bottom: 5px;}
 
-.list-journeys {margin-top: 15px;}
+.list-journeys { margin-top: 15px;}
 
 .center-element {display: block; margin: 0 auto;}
 
 .home-wrapper, .login-wrapper {max-width: 600px; margin: 0 auto;}
 .home-wrapper .center-block {margin-top: 30px;}
 .home-wrapper .center-block a {margin: 0 10px;}
+.home-button-wrapper {display: block; text-align: center; margin-bottom: 15px}
+.home-button-wrapper a {display: inline-block; margin: 5px 10px;}
 
-.error-page {
-    text-align: center;
-}
+.vehicle-list-wrapper ul {padding: 0;}
+.vehicle-list-wrapper ul li { display:block;}
+.vehicle-list-wrapper ul li a {margin-left: 15px}
+.vehicle-list-wrapper strong {text-transform: uppercase;}
+.vehicle-list-wrapper i { color:#666;}
+.vehicle-form { margin-bottom: 25px; max-width: 500px;}
+
+
+.error-page { text-align: center;}
 
 footer p {text-align: center;}

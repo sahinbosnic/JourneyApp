@@ -1,0 +1,31 @@
+﻿<div class="home-button-wrapper">
+    <a class="btn btn-default" href="#!/home">Hem</a>
+    <a class="btn btn-default" href="#!/vehicle">Mina fordon</a>
+    <a class="btn btn-default" href="#!/account">Mitt konto</a>
+    <a class="btn btn-default" href="#!/statistics">Statistik</a>
+</div>
+
+<h2>Skapa/Redigera fordon</h2>
+<form class="vehicle-form" ng-submit="postVehicle()">
+    <input ng-model="formNumberPlate" type="text" name="vehicleNumberPlate" class="form-control" placeholder="Registreringsnummer" required="">
+    <input ng-model="formOdometer" type="number" name="vehicleOdometer" class="form-control" placeholder="Mätarställning" required="">
+    <input ng-model="formNote" type="text" name="vehicleNote" class="form-control" placeholder="Anteckning" required="">
+    <input type="submit" class="form-control btn-primary" value="Skapa/Redigera"/>
+</form>
+
+<div class="vehicle-list-wrapper">
+    <ul>
+        <li class="list-group-item" ng-repeat="row in myVehicles">
+            <strong class="">{{row.NumberPlate}} -</strong>
+            <i class="">Mätarställning: {{row.Odometer}}</i>
+            <span class="">{{row.Note}}</span>
+            <a class="pull-right" href="">Ta bort</a>
+            <a class="pull-right" href="">Redigera</a>
+            <span class="pull-right">
+                <span class="btn btn-xs btn-success" >
+                    Aktiv
+                </span>
+            </span>
+        </li>
+    </ul>
+</div>

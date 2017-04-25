@@ -24,6 +24,10 @@ angular.module("journeyApp").config(
             templateUrl: "/Templates/Routing/stop.html",
             controller: 'stopController'
         })
+        .when("/vehicle", {
+            templateUrl: "/Templates/Routing/vehicle.html",
+            controller: 'vehicleController'
+        })
         .when("/404", {
             templateUrl: "/Templates/Routing/404.html",
             controller: '404'

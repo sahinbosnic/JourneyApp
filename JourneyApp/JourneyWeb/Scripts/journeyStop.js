@@ -25,26 +25,6 @@
 
     //Submit form and start a new trip
     $scope.stopTrip = function () {
-        /*var tripVehicle = $scope.myTrip.Vehicle.Id;
-        var tripStartDate = $scope.myTrip.TripDate;
-        var tripStartOdometer = $scope.myTrip.OdometerStart;
-        var tripStopOdometer = $scope.tripStopOdometer; //New value from html file
-        var tripStartPos = $scope.myTrip.AddressStart;
-        var tripStopPos = $scope.myTrip.AddressStop;
-        var tripErrand = $scope.myTrip.Errand;
-        var tripNote = $scope.myTrip.Note;
-
-        var data = {
-            "Id": 0,
-            "TripDate": tripStartDate,
-            "OdometerStart": tripStartOdometer,
-            "OdometerStop": tripStopOdometer,
-            "AddressStart": tripStartPos,
-            "AddressStop": tripStopPos,
-            "Errand": tripErrand,
-            "Note": tripNote,
-            "Active": false
-        };*/
         $scope.myTrip.OdometerStop = $scope.tripStopOdometer;
         $scope.myTrip.Active = false;
 
