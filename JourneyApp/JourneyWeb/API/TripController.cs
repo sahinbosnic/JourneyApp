@@ -20,8 +20,7 @@ namespace JourneyWeb.Controllers
 
         public TripController()
         {
-            //this.ApplicationDbContext = new ApplicationDbContext();
-            //this.UserManager = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(this.ApplicationDbContext));
+            UserManager = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(this.db));
         }
 
         [Authorize]
@@ -44,7 +43,7 @@ namespace JourneyWeb.Controllers
 
         }
 
-        //[Authorize]
+        [Authorize]
         public string Post(Trip trip)
         {
             if (trip.Id > 0) // Save
@@ -53,42 +52,16 @@ namespace JourneyWeb.Controllers
             }
             else // Add
             {
+                var vehicle = db.Vehicle.Find(trip.VehicleId);
+                trip.Vehicle = vehicle;
+                ApplicationUser user = UserManager.FindById(User.Identity.GetUserId());
+                trip.User = user;
                 db.Trip.Add(trip);
             }
 
             db.SaveChanges();
-            return string.Format("seems to work!");
+            return string.Format("Trip successfully started");
 
-            //var userId = User.Identity.GetUserId();
-            /*Trip tripToUpdate = null;
-
-            if (trip.Id > 0) // Update
-            {
-                //tripToUpdate = db.Trip.Include(x => x.User).First(i => i.Id == trip.Id);
-                db.Entry(trip).State = EntityState.Modified;
-            }
-            else // New
-            {
-                //var userId = User.Identity.GetUserId();
-                //var user = UserManager.FindById(User.Identity.GetUserId());
-                ApplicationUser user = System.Web.HttpContext.Current.GetOwinContext().GetUserManager<ApplicationUserManager>().FindById(System.Web.HttpContext.Current.User.Identity.GetUserId());
-
-                tripToUpdate = new Trip();
-                tripToUpdate.User = user;
-                tripToUpdate.TripDate = trip.TripDate;
-                tripToUpdate.OdometerStart = trip.OdometerStart;
-                tripToUpdate.OdometerStop = trip.OdometerStop;
-                tripToUpdate.AddressStart = trip.AddressStart;
-                tripToUpdate.AddressStop = trip.AddressStop;
-                tripToUpdate.Errand = trip.Errand;
-                tripToUpdate.Active = trip.Active;
-
-                db.Trip.Add(tripToUpdate);
-            }
-
-            db.SaveChanges();
-
-            return string.Format("seems to work!");*/
         }
 
         /*public IEnumerable<Vehicle> Post(Vehicle vehicle)

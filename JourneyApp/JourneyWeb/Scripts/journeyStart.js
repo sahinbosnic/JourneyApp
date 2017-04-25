@@ -9,6 +9,7 @@
         //error
     });
 
+    
     //Get today's date and apply it to startdate
     var today = new Date();
     $scope.currentDate = today.toISOString().substring(0, 10);
@@ -44,12 +45,14 @@
             "Errand": tripErrand,
             "Note": tripNote,
             "Active": true,
-            //"Vehicle": {Id: 1}
+            "VehicleId": tripVehicle
         };
-
-        //$http.post('/someUrl', data, config).then(successCallback, errorCallback);
+        console.log(data);
+        //console.log(data);
+        //console.log(tripVehicle);
         $http.post("/api/Trip", data, { headers: { 'Content-Type': 'application/json' } })
         .then(function (data) {
+            //console.log(tripVehicle, "Vehicle ID!");
             $location.path("/home");
         });
     };
