@@ -6,10 +6,12 @@
 </div>
 
 <h2>Skapa/Redigera fordon</h2>
-<form class="vehicle-form" ng-submit="postVehicle()">
-    <input ng-model="formNumberPlate" type="text" name="vehicleNumberPlate" class="form-control" placeholder="Registreringsnummer" required="">
-    <input ng-model="formOdometer" type="number" name="vehicleOdometer" class="form-control" placeholder="Mätarställning" required="">
-    <input ng-model="formNote" type="text" name="vehicleNote" class="form-control" placeholder="Anteckning" required="">
+<form class="vehicle-form" ng-submit="sendFormVehicle(formVehicle)">
+    <input ng-model="formVehicle.Id" type="hidden">
+    <input ng-model="formVehicle.Active" type="hidden">
+    <input ng-model="formVehicle.NumberPlate" type="text" name="vehicleNumberPlate" class="form-control" placeholder="Registreringsnummer" required="">
+    <input ng-model="formVehicle.Odometer" type="number" name="vehicleOdometer" class="form-control" placeholder="Mätarställning" required="">
+    <input ng-model="formVehicle.Note" type="text" name="vehicleNote" class="form-control" placeholder="Anteckning">
     <input type="submit" class="form-control btn-primary" value="Skapa/Redigera"/>
 </form>
 
@@ -19,10 +21,10 @@
             <strong class="">{{row.NumberPlate}} -</strong>
             <i class="">Mätarställning: {{row.Odometer}}</i>
             <span class="">{{row.Note}}</span>
-            <a class="pull-right" href="">Ta bort</a>
-            <a class="pull-right" href="">Redigera</a>
+            <a class="pull-right" href="" ng-click="deleteVehicle(row)">Ta bort</a>
+            <a class="pull-right" href="" ng-click="editVehicle(row)">Redigera</a>
             <span class="pull-right">
-                <span class="btn btn-xs btn-success" >
+                <span class="btn btn-xs {{row.Active ? 'btn-success' : 'btn-danger'}}" ng-click="toggleVehicle(row)">
                     Aktiv
                 </span>
             </span>

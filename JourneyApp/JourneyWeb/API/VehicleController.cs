@@ -6,6 +6,7 @@ using System.Web.Http;
 using System.Data.Entity;
 using JourneyWeb.Models;
 using Microsoft.AspNet.Identity;
+using Microsoft.AspNet.Identity.EntityFramework;
 
 namespace JourneyWeb.Controllers
 {
@@ -13,6 +14,13 @@ namespace JourneyWeb.Controllers
     {
 
         private ApplicationDbContext db = new ApplicationDbContext();
+        protected UserManager<ApplicationUser> UserManager { get; set; }
+        //protected ApplicationDbContext ApplicationDbContext { get; set; }
+
+        public VehicleController()
+        {
+            UserManager = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(this.db));
+        }
 
         [Authorize]
         public IEnumerable<Vehicle> Get()
@@ -23,9 +31,31 @@ namespace JourneyWeb.Controllers
             return getVehicleList;
         }
 
-        public IEnumerable<Vehicle> Get(string userId)
+        [Authorize]
+        public void Post(Vehicle vehicle)
         {
-            return null;
+            if (vehicle.Id > 0) // Save
+            {
+                db.Entry(vehicle).State = EntityState.Modified;
+            }
+            else // Add
+            {
+                ApplicationUser user = UserManager.FindById(User.Identity.GetUserId());
+                vehicle.User = user;
+                db.Vehicle.Add(vehicle);
+            }
+
+            db.SaveChanges();
+
+        }
+
+        [Authorize][AcceptVerbs("DELETE")]
+        public void Delete(int id)
+        {
+            var vehicle = db.Vehicle.Find(id);
+            db.Vehicle.Remove(vehicle);
+
+            db.SaveChanges();
         }
     }
 }

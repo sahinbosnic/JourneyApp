@@ -1,7 +1,7 @@
 ﻿angular.module("journeyApp").controller('stopController', function ($scope, $location, $http, $routeParams) {
     var tripId = $routeParams.tripId;
- 
-    $scope.myTrip = [];
+    
+    $scope.myTrip = null;
     var url = "/api/Trip/" + tripId;
     console.log(url);
     $http.get(url).then(function (response) {

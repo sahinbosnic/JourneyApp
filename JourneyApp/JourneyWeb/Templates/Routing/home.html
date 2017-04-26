@@ -9,7 +9,7 @@
 <ul class="list-group list-journeys">
 
     <li ng-repeat="row in myTrips">
-        <a href="{{row.Active ? '#!/stop/'+row.Id : '#!/home'}}" class="{{row.Active ? 'list-group-item list-group-item-action list-group-item-warning' : 'list-group-item'}}">
+        <a href="{{'#!/stop/'+row.Id}}" class="{{row.Active ? 'list-group-item list-group-item-action list-group-item-warning' : 'list-group-item'}}">
             <strong>{{row.Vehicle.NumberPlate}}</strong>
             <i>{{row.AddressStart}} - {{row.AddressStop}}</i>
             <span>{{row.OdometerStart - row.OdometerStop}} km</span>

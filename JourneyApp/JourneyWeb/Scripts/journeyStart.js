@@ -2,7 +2,7 @@
 
     //Get vehicle list for logged in user
     $scope.tripVehicle = null;
-    $scope.myVehicles = [];
+    $scope.myVehicles = null;
     $http.get("/api/Vehicle").then(function (response) {
         $scope.myVehicles = response.data;
     }, function (error) {

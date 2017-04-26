@@ -4,7 +4,7 @@
     $scope.startMessage = "Starta en ny resa";
 
     //Get all trips
-    $scope.myTrips = [];
+    $scope.myTrips = null;
     $http.get("/api/Trip").then(function (response) {
         $scope.myTrips = response.data;
 

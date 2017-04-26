@@ -1,4 +1,2 @@
-1. Ta reda på hur användaren ska hållas online (session)
-	- Logga in och spara id/pw på sidan tills användaren refreshar sidan. (säkerhetshål??)
-	- Använda det inbyggda i MVC/EF ?
-	- Säkerhetshål???
+log4net
+http://stackoverflow.com/questions/36330299/how-to-configure-log4net-with-asp-net-mvc-c-sharp-in-visual-studio-20122015
