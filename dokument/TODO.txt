@@ -1,2 +1,4 @@
 log4net
 http://stackoverflow.com/questions/36330299/how-to-configure-log4net-with-asp-net-mvc-c-sharp-in-visual-studio-20122015
+
+journeyMain.js with menus
