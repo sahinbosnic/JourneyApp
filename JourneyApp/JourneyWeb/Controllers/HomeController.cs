@@ -10,7 +10,14 @@ namespace JourneyWeb.Controllers
     {
         public ActionResult Index()
         {
-            return View();
+            var user = User.Identity.Name;
+            if (user != null && user.Length > 0)
+            {
+                Response.Redirect("/journey");
+                return null;
+
+            }
+            else { return View(); }
         }
 
         public ActionResult About()
