@@ -35,6 +35,13 @@ ul {list-style: none;}
 .vehicle-form { margin-bottom: 25px; max-width: 500px;}
 
 
+.stats-wrapper { max-width: 800px; margin: 0 auto;}
+.stats-wrapper ul { margin: 0; padding: 0px;}
+.stats-wrapper ul li:hover {cursor: pointer;}
+.stats-wrapper .chart-box {}
+.stats-wrapper .pdf-box { margin-top: 25px;}
+
+
 .error-page { text-align: center;}
 
 footer p {text-align: center;}

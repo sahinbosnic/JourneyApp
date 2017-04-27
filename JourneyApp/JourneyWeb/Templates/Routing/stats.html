@@ -1,0 +1,37 @@
+﻿<div class="stats-wrapper row">
+   
+    <div class="row">
+        <div class="stats-box col-md-4">
+            <label for="vehicleNumberPlate">Valt fordon:</label>
+            <span name="vehicleNumberPlate" class="list-group-item">Reg nr: <strong>{{selectedVehicle.NumberPlate}}</strong></span>
+            <span class="list-group-item">Mätarställning: <strong>{{selectedVehicle.Odometer}}</strong></span>
+        </div>
+
+        <form class="form-new-journey col-md-4" ng-submit="getAllTrips()">
+            <label for="getStartDate">Välj Datum för resor</label>
+            <input ng-model="selectedVehicle.DateStart" type="date" name="getStartDate" class="form-control" required="">
+            <input ng-model="selectedVehicle.DateStop" type="date" name="getStopDate" class="form-control" required="">
+            <button class="form-control" type="submit">Generera diagram</button>
+        </form>
+        <div class="stats-box pdf-box col-md-4">
+            <a class="btn btn-primary" href="#!/stats">Skapa pdf</a>
+        </div>
+    </div>
+
+    <div id="piechart" class="chart-box row">
+        
+    </div>
+
+    <div class="col-md-12">
+        <h3>Tryck för att välja ett fordon</h3>
+        <ul>
+            <li ng-repeat="row in myVehicles">
+                <a class="list-group-item" ng-click="setVehicle(row)">
+                    <strong class="">{{row.NumberPlate}} -</strong>
+                    <i class="">Mätarställning: {{row.Odometer}}</i>
+                    <span class="">{{row.Note}}</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>

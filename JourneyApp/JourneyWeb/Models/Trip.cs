@@ -12,7 +12,7 @@ namespace JourneyWeb.Models
         public int Id { get; set; }
         [JsonIgnore]
         public virtual ApplicationUser User { get; set; }
-        [JsonIgnore]
+        //[JsonIgnore]
         public virtual Vehicle Vehicle { get; set; }
         [NotMapped]
         public int VehicleId { get; set; }
@@ -25,9 +25,9 @@ namespace JourneyWeb.Models
         public string Note { get; set; }
         public bool Active { get; set; }
 
-        /*public Trip()
+        public Trip()
         {
-            UserId = User.Id;
-        }*/
+            //VehicleId = Vehicle.Id;
+        }
     }
 }

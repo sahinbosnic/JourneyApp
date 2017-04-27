@@ -19,6 +19,10 @@
         console.log(error, "Contact an administrator");
     });
 
+    $scope.printIt = function (vehicle) {
+        console.log(vehicle);
+    };
+
     //returns first active trip
     function activeTrip(trip){ if (trip.Active == true){ return true; }}
 

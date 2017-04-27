@@ -1,11 +1,14 @@
 ﻿angular.module("journeyApp").controller('stopController', function ($scope, $location, $http, $routeParams) {
+    //$scope.menu = getMenu();
+
     var tripId = $routeParams.tripId;
-    
+  
     $scope.myTrip = null;
     var url = "/api/Trip/" + tripId;
     console.log(url);
     $http.get(url).then(function (response) {
         $scope.myTrip = response.data;
+        $scope.myTrip.OdometerStop = $scope.myTrip.OdometerStart;
         console.log($scope.myTrip);
     }, function (error) {
         //error
@@ -18,14 +21,13 @@
     });
 
     //Set current location
-    $scope.setStartPos = function () {
-        $scope.tripStopPos = location;
+    $scope.setStopPos = function () {
+        $scope.myTrip.AddressStop = location;
     }
 
 
-    //Submit form and start a new trip
     $scope.stopTrip = function () {
-        $scope.myTrip.OdometerStop = $scope.tripStopOdometer;
+        console.log($scope.myTrip,"test");
         $scope.myTrip.Active = false;
 
         //$http.post('/someUrl', data, config).then(successCallback, errorCallback);

@@ -1,7 +1,6 @@
 ﻿angular.module("journeyApp", ['ngRoute']);
 
 angular.module("journeyApp").config(
-
     function ($routeProvider) {
         $routeProvider
         .when("/", {
@@ -27,6 +26,10 @@ angular.module("journeyApp").config(
         .when("/vehicle", {
             templateUrl: "/Templates/Routing/vehicle.html",
             controller: 'vehicleController'
+        })
+        .when("/stats", {
+            templateUrl: "/Templates/Routing/stats.html",
+            controller: 'statsController'
         })
         .when("/404", {
             templateUrl: "/Templates/Routing/404.html",

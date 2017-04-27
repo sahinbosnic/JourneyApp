@@ -267,6 +267,7 @@
     <Content Include="Scripts\journeyHome.js" />
     <Content Include="Scripts\journeyMain.js" />
     <Content Include="Scripts\journeyStart.js" />
+    <Content Include="Scripts\journeyStats.js" />
     <Content Include="Scripts\journeyStop.js" />
     <Content Include="Scripts\journeyVehicle.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
@@ -284,6 +285,7 @@
     <Content Include="Templates\Routing\home.html" />
     <Content Include="Templates\Routing\login.html" />
     <Content Include="Templates\Routing\start.html" />
+    <Content Include="Templates\Routing\stats.html" />
     <Content Include="Templates\Routing\stop.html" />
     <Content Include="Templates\Routing\vehicle.html" />
     <Content Include="Web.config">

@@ -1,4 +1,4 @@
-﻿{{menu}}
+﻿
 <a href="{{startUrl}}" class="btn btn-primary center-element">{{startMessage}}</a>
 <ul class="list-group list-journeys">
 
@@ -6,7 +6,7 @@
         <a href="{{'#!/stop/'+row.Id}}" class="{{row.Active ? 'list-group-item list-group-item-action list-group-item-warning' : 'list-group-item'}}">
             <strong>{{row.Vehicle.NumberPlate}}</strong>
             <i>{{row.AddressStart}} - {{row.AddressStop}}</i>
-            <span>{{row.OdometerStart - row.OdometerStop}} km</span>
+            <span>{{row.OdometerStop - row.OdometerStart}} km</span>
         </a>
     </li>
     
