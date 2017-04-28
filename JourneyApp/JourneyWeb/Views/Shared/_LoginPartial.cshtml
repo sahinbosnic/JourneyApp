@@ -6,8 +6,11 @@
     @Html.AntiForgeryToken()
 
     <ul class="nav navbar-nav navbar-right">
-        <li>
-            @Html.ActionLink("Välkommen " + User.Identity.GetUserName() + "!", "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Manage" })
+        <li><a href="/journey#!/home">Resor</a></li>
+        <li><a href="/journey#!/vehicle">Mina fordon</a></li>
+        <li><a href="/journey#!/stats">Statistik</a></li>
+    <li>
+            @Html.ActionLink("Konto", "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Manage" })
         </li>
         <li><a href="javascript:document.getElementById('logoutForm').submit()">Logga ut</a></li>
     </ul>

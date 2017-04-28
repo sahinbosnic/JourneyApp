@@ -26,9 +26,9 @@ namespace JourneyWeb.Controllers
         [Authorize]
         public IEnumerable<Trip> Get()
         {
-            //var userId = User.Identity.GetUserId();
+            var userId = User.Identity.GetUserId();
             //var getVehicleList = db.Trip.Where(x => x.User.Id == userId).OrderByDescending(x => x.Active).ThenBy(x => x.NumberPlate).ToList();
-            var getTripList = db.Trip.Include(x => x.Vehicle).OrderByDescending(x => x.Active).ToList();
+            var getTripList = db.Trip.Include(x => x.Vehicle).Where(x => x.User.Id == userId).OrderByDescending(x => x.Active).ToList();
 
             return getTripList;
 

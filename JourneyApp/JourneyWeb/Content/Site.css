@@ -40,7 +40,7 @@ ul {list-style: none;}
 .stats-wrapper ul li:hover {cursor: pointer;}
 .stats-wrapper .chart-box {}
 .stats-wrapper .pdf-box { margin-top: 25px;}
-
+.stats-wrapper .hidden { display: none;}
 
 .error-page { text-align: center;}
 

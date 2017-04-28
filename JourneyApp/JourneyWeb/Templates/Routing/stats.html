@@ -14,7 +14,7 @@
             <button class="form-control" type="submit">Generera diagram</button>
         </form>
         <div class="stats-box pdf-box col-md-4">
-            <a class="btn btn-primary" href="#!/stats">Skapa pdf</a>
+            <a ng-click="generatePDF();" class="btn btn-primary {{ showPdfButton ? '' : 'hidden'}}" href="#!/stats">Skapa pdf</a>      
         </div>
     </div>
 

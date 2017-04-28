@@ -1,8 +1,9 @@
-﻿angular.module("journeyApp").controller('statsController', function ($scope, $http, $location) {
+﻿angular.module("journeyApp").controller('statsController', function ($scope, $http, $location, $window) {
 
     $scope.myVehicles = null;
     $scope.selectedVehicle = null;
     $scope.selectedTrips = null;
+    $scope.showPdfButton = false;
 
     $http.get("/api/Vehicle").then(function (response) {
         $scope.myVehicles = response.data;
@@ -11,6 +12,7 @@
     });
 
     $scope.setVehicle = function (vehicle) {
+        $scope.showPdfButton = false;
         $scope.selectedVehicle = null;
         $scope.selectedTrips = null;
         $scope.selectedVehicle = vehicle;
@@ -66,6 +68,11 @@
 
         //render chart
         $scope.drawChart(tripData);
+
+        //Enable PDF generation
+        $scope.showPdfButton = true;
+
+        console.log($scope.selectedTrips);
     };
 
     //Render chart
@@ -91,5 +98,15 @@
         var chart = new google.visualization.PieChart(document.getElementById('piechart'));
 
         chart.draw(data, options);
+    }
+
+    $scope.generatePDF = function () {
+        $http.post("/api/pdf/generate", $scope.selectedTrips, { headers: { 'Content-Type': 'application/json' } })
+        .then(function (data) {
+            console.log(data);
+            $window.open(data.data, '_blank');
+            //$location.path("/home");
+        });
+
     }
 })

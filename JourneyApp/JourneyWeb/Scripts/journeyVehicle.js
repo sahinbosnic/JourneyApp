@@ -1,11 +1,13 @@
 ﻿angular.module("journeyApp").controller('vehicleController', function ($scope, $location, $http, $routeParams) {
-
     $scope.myVehicles = null;
-    $http.get("/api/Vehicle").then(function (response) {
-        $scope.myVehicles = response.data;
-    }, function (error) {
-        //error
-    });
+    $scope.getVehicles = function () {
+        $http.get("/api/Vehicle").then(function (response) {
+            $scope.myVehicles = response.data;
+        }, function (error) {
+            //error
+        });
+    };
+    $scope.getVehicles();
 
     $scope.editVehicle = function (vehicle) {
         $scope.formVehicle = vehicle;
@@ -15,6 +17,7 @@
         $http.delete("/api/Vehicle/" + vehicle.Id, { headers: { 'Content-Type': 'application/json' } })
         .then(function (data) {
             $location.path("/vehicle");
+            $scope.getVehicles();
         });
     };
 
@@ -22,7 +25,6 @@
         //$scope.formVehicle = vehicle;
         if (vehicle.Active === true) { vehicle.Active = false; }
         else { vehicle.Active = true; }
-        //console.log(vehicle);
         $scope.postVehicle(vehicle);        
     };
 
@@ -32,7 +34,7 @@
         {
             vehicle.Id = 0;
             vehicle.Active = true;
-            $scope.myVehicles.push(vehicle);
+            //$scope.myVehicles.push(vehicle);
         }
         $scope.postVehicle(vehicle);
     }
@@ -41,7 +43,7 @@
         $http.post("/api/Vehicle", vehicle, { headers: { 'Content-Type': 'application/json' } })
         .then(function (data) {
             $scope.formVehicle = null;
-            $location.path("/vehicle");
+            $scope.getVehicles();
         });
     };
 });
