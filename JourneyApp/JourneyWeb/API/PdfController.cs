@@ -21,7 +21,7 @@ namespace JourneyWeb.API
             var printVar = "Fordon: " + tripData[0].Vehicle.NumberPlate + "\n \n";
             foreach (var trip in tripData)
             {
-                printVar += String.Format("Date: {0} | Start: {1} | Stop:{2} | Distance{3} \n \n", trip.TripDate, trip.AddressStart, trip.AddressStop, (trip.OdometerStop - trip.OdometerStart));
+                printVar += string.Format("Datum: {0} | Start: {1} | Destination: {2} | Körsträcka: {3}km \n \n", trip.TripDate, trip.AddressStart, trip.AddressStop, (trip.OdometerStop - trip.OdometerStart));
             }
             var guidUrl = "demo-" + Guid.NewGuid().ToString() + ".pdf";
             var savePath = HttpContext.Current.Request.PhysicalApplicationPath + "/PDF/" + guidUrl;
