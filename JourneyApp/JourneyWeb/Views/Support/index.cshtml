@@ -1,0 +1,35 @@
+﻿<script src="~/Scripts/jquery.signalR-2.2.1.min.js"></script>
+<script src="~/SignalR/hubs"></script>
+
+<div class="container">
+    <input type="text" id="message" />
+    <input type="button" id="sendmessage" value="Skicka" />
+    <input type="hidden" id="displayname" />
+    <ul id="discussion"></ul>
+</div>
+<script type="text/javascript">
+
+    $(function () {
+        var chat = $.connection.supportHub;
+
+        chat.client.broadcastMessage = function (name, message) {
+            var encodeName = $('<div />').text(name).html();
+            var encodeMsg = $('<div />').text(message).html();
+            $('#discussion').append('<li><strong>' + encodeName
+                + '</strong>:&nbsp;&nbsp;' + encodeMsg + '</li>');
+        };
+
+        $('#displayname').val(prompt('Enter your name:', ''));
+
+        $('#message').focus();
+
+        $.connection.hub.start().done(function () {
+            $("#sendmessage").click(function () {
+                chat.server.send($('#displayname').val(), $("#message").val());
+                $("#message").val('').focus();
+            });
+        });
+    });
+
+
+</script>

@@ -246,7 +246,9 @@
     <Compile Include="Models\Trip.cs" />
     <Compile Include="Models\Vehicle.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SignalR\SupportHub.cs" />
     <Compile Include="Startup.cs" />
+    <Compile Include="Views\Support\SupportController.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap-theme.css" />
@@ -262,7 +264,7 @@
     <Content Include="Scripts\angular-route.min.js" />
     <Content Include="Scripts\angular.js" />
     <Content Include="Scripts\angular.min.js" />
-    <Content Include="Scripts\journeyApp.js" />
+    <Content Include="Scripts\journey\journeyApp.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="ApplicationInsights.config">
@@ -277,12 +279,12 @@
     <Content Include="Content\bootstrap-theme.css.map" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\geolocation.js" />
-    <Content Include="Scripts\journeyHome.js" />
-    <Content Include="Scripts\journeyMain.js" />
-    <Content Include="Scripts\journeyStart.js" />
-    <Content Include="Scripts\journeyStats.js" />
-    <Content Include="Scripts\journeyStop.js" />
-    <Content Include="Scripts\journeyVehicle.js" />
+    <Content Include="Scripts\journey\journeyHome.js" />
+    <Content Include="Scripts\journey\journeyMain.js" />
+    <Content Include="Scripts\journey\journeyStart.js" />
+    <Content Include="Scripts\journey\journeyStats.js" />
+    <Content Include="Scripts\journey\journeyStop.js" />
+    <Content Include="Scripts\journey\journeyVehicle.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
@@ -340,6 +342,7 @@
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Journey\Index.cshtml" />
+    <Content Include="Views\Support\index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -9,8 +9,11 @@
         <li><a href="/journey#!/home">Resor</a></li>
         <li><a href="/journey#!/vehicle">Mina fordon</a></li>
         <li><a href="/journey#!/stats">Statistik</a></li>
-    <li>
+        <li>
             @Html.ActionLink("Konto", "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Manage" })
+        </li>
+        <li>
+            @Html.ActionLink("Support", "Index", "Support", routeValues: null, htmlAttributes: new { title = "Support" })
         </li>
         <li><a href="javascript:document.getElementById('logoutForm').submit()">Logga ut</a></li>
     </ul>

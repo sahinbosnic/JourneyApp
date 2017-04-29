@@ -63,6 +63,9 @@ namespace JourneyWeb
             //    ClientId = "",
             //    ClientSecret = ""
             //});
+
+
+            app.MapSignalR();
         }
     }
 }
