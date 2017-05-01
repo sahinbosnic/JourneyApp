@@ -1,0 +1,8 @@
+DEBUG 2017-05-02 01:07:06,293   416ms HomeController         Index              - Debug message
+WARN  2017-05-02 01:07:06,316   439ms HomeController         Index              - Warn message
+ERROR 2017-05-02 01:07:06,317   440ms HomeController         Index              - Error message
+FATAL 2017-05-02 01:07:06,317   440ms HomeController         Index              - Fatal message
+DEBUG 2017-05-02 01:07:11,594  5717ms HomeController         Index              - Debug message
+WARN  2017-05-02 01:07:11,594  5717ms HomeController         Index              - Warn message
+ERROR 2017-05-02 01:07:11,595  5718ms HomeController         Index              - Error message
+FATAL 2017-05-02 01:07:11,595  5718ms HomeController         Index              - Fatal message
