@@ -13,5 +13,10 @@ namespace JourneyWeb.Views.Support
         {
             return View();
         }
+
+        public ActionResult Admin()
+        {
+            return View();
+        }
     }
 }

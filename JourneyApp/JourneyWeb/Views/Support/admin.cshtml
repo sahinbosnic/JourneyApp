@@ -2,6 +2,7 @@
 <script src="~/SignalR/hubs"></script>
 
 <div class="support-container">
+    <h2>Admin</h2>
     <div class="input-group start-adress-container">
         <input type="text" id="message" class="form-control" placeholder="Skriv något..." required="">
         <span class="input-group-btn">
@@ -16,7 +17,7 @@
 
     $(function () {
         var chat = $.connection.supportHub;
-        $.connection.hub.qs = { 'user': "client" };
+        $.connection.hub.qs = { 'user': "admin" };
 
         chat.client.broadcastMessage = function (name, message) {
             var encodeName = $('<div />').text(name).html();
@@ -25,7 +26,7 @@
                 + '</strong>:&nbsp;&nbsp;' + encodeMsg + '</li>');
         };
 
-        $('#displayname').val("Användare"/*prompt('Enter your name:', '')*/);
+        $('#displayname').val("Admin"/*prompt('Enter your name:', '')*/);
 
         $('#message').focus();
 

@@ -45,3 +45,8 @@ ul {list-style: none;}
 .error-page { text-align: center;}
 
 footer p {text-align: center;}
+
+
+/*Support page*/
+.support-container {max-width: 600px;}
+.support-container ul { padding: 0; margin: 0 auto;}
