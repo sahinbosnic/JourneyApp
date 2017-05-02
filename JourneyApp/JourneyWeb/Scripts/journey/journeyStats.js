@@ -1,4 +1,4 @@
-﻿angular.module("journeyApp").controller('statsController', function ($scope, $http, $location, $window) {
+﻿angular.module("journeyApp").controller('statsController', ["$scope", "$http", "$location", "$window", function ($scope, $http, $location, $window) {
 
     $scope.myVehicles = null;
     $scope.selectedVehicle = null;
@@ -19,8 +19,7 @@
     }
 
     $scope.getAllTrips = function () {
-        if($scope.selectedVehicle.NumberPlate == null )
-        {
+        if ($scope.selectedVehicle.NumberPlate == null) {
 
         }
 
@@ -39,8 +38,7 @@
         //Filter out trips after date
         for (var i in $scope.selectedVehicle.Trips) {
             if ($scope.selectedVehicle.Trips[i].TripDate.substring(0, 10) > $scope.selectedVehicle.DateStart.toISOString().substring(0, 10) &&
-                $scope.selectedVehicle.Trips[i].TripDate.substring(0, 10) < $scope.selectedVehicle.DateStop.toISOString().substring(0, 10))
-            {
+                $scope.selectedVehicle.Trips[i].TripDate.substring(0, 10) < $scope.selectedVehicle.DateStop.toISOString().substring(0, 10)) {
                 //$scope.selectedTrips.push($scope.selectedVehicle.Trips[i]);
                 //console.log($scope.selectedVehicle.Trips[i]);
                 $scope.selectedTrips.push($scope.selectedVehicle.Trips[i]);
@@ -49,10 +47,8 @@
 
         var tripData = { Set0: 0, Set21: 0, Set51: 0, Set201: 0 };
         //Filter out trips by distance traveled
-        for (var i in $scope.selectedTrips)
-        {
-            if(($scope.selectedTrips[i].OdometerStop - $scope.selectedTrips[i].OdometerStart) >= 201)
-            {
+        for (var i in $scope.selectedTrips) {
+            if (($scope.selectedTrips[i].OdometerStop - $scope.selectedTrips[i].OdometerStart) >= 201) {
                 tripData.Set201 += 1;
             }
             else if (($scope.selectedTrips[i].OdometerStop - $scope.selectedTrips[i].OdometerStart) >= 51) {
@@ -79,7 +75,7 @@
     google.charts.load('current', { 'packages': ['corechart'] });
     google.charts.setOnLoadCallback($scope.drawChart);
 
-    $scope.drawChart = function(tripData) {
+    $scope.drawChart = function (tripData) {
         var data = google.visualization.arrayToDataTable([
           ['Längd på resor', 'Antal resor'],
           ['0-20km', tripData.Set0],
@@ -109,4 +105,4 @@
         });
 
     }
-})
+}]);

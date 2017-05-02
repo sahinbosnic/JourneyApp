@@ -1,4 +1,4 @@
-﻿angular.module("journeyApp").controller('vehicleController', function ($scope, $location, $http, $routeParams) {
+﻿angular.module("journeyApp").controller('vehicleController', ["$scope", "$location", "$http", "$routeParams", function ($scope, $location, $http, $routeParams) {
     $scope.myVehicles = null;
     $scope.getVehicles = function () {
         $http.get("/api/Vehicle").then(function (response) {
@@ -46,4 +46,4 @@
             $scope.getVehicles();
         });
     };
-});
+}]);

@@ -1,4 +1,4 @@
-﻿angular.module("journeyApp").controller('stopController', function ($scope, $location, $http, $routeParams) {
+﻿angular.module("journeyApp").controller('stopController', ["$scope", "$location", "$http", "$routeParams", function ($scope, $location, $http, $routeParams) {
     //$scope.menu = getMenu();
 
     var tripId = $routeParams.tripId;
@@ -37,4 +37,4 @@
         });
     };
 
-});
+}]);

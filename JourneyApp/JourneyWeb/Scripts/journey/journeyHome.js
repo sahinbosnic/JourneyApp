@@ -1,4 +1,4 @@
-﻿angular.module("journeyApp").controller('homeController', function ($scope, $http) {
+﻿angular.module("journeyApp").controller('homeController', ["$scope", "$http", function ($scope, $http) {
 
     $scope.startUrl = "#!/start";
     $scope.startMessage = "Starta en ny resa";
@@ -33,4 +33,4 @@
         $scope.startMessage = "Slutför din nuvarande resa först";
     }
 
-});
+}]);

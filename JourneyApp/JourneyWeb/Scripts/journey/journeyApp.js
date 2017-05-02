@@ -1,6 +1,7 @@
 ﻿angular.module("journeyApp", ['ngRoute']);
 
-angular.module("journeyApp").config(
+angular.module("journeyApp").config([
+    "$routeProvider",
     function ($routeProvider) {
         $routeProvider
         .when("/", {
@@ -38,4 +39,4 @@ angular.module("journeyApp").config(
         .otherwise({
             redirectTo: "/404"
         });
-    });
+    }]);

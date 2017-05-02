@@ -1,4 +1,4 @@
-﻿angular.module("journeyApp").controller('startController', function ($scope, $http, $location) {
+﻿angular.module("journeyApp").controller('startController', ["$scope", "$http", "$location", function ($scope, $http, $location) {
 
     //Get vehicle list for logged in user
     $scope.tripVehicle = null;
@@ -9,7 +9,7 @@
         //error
     });
 
-    
+
     //Get today's date and apply it to startdate
     var today = new Date();
     $scope.currentDate = today.toISOString().substring(0, 10);
@@ -57,4 +57,4 @@
         });
     };
 
-})
+}]);

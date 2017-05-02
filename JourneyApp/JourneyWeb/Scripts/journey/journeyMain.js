@@ -1,4 +1,4 @@
-﻿angular.module("journeyApp").controller('mainController', function ($scope) {
+﻿angular.module("journeyApp").controller('mainController', ["$scope", function ($scope) {
     $scope.menu = [
         '<div class="home-button-wrapper">',
         '<a class="btn btn-default" href="#!/home">Hem</a>',
@@ -23,4 +23,4 @@
         {url: "/Manage", text: "Mitt konto"},
         {url: "#!/home", text: "Statistik"},
     ];*/
-});
+}]);
