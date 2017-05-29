@@ -29,8 +29,11 @@ namespace JourneyWeb
                       "~/Scripts/respond.js"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
-                      "~/Content/bootstrap.css",
                       "~/Content/site.css"));
+
+            bundles.Add(new LessBundle("~/Content/less").Include(
+                      "~/Content/bootstrap/bootstrap.less"));
+           // bundles.Add(new LessBundle("~/Content/less").Include("~/Content/*.less"));
         }
     }
 }
